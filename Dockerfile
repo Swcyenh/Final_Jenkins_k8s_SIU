@@ -1,5 +1,5 @@
 # Sử dụng image Python nhẹ
-FROM python:3.11-slim
+FROM python:3.10-slim
 
 RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
 # Đặt thư mục làm việc trong container
@@ -12,7 +12,7 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose port nếu cần (ví dụ, nếu ứng dụng của bạn chạy server)
-EXPOSE 8080
+EXPOSE 8000
 
 # Chạy ứng dụng
 CMD ["python", "app.py"]
